@@ -1,0 +1,7 @@
+---
+tool_version: "0.50.0"
+tool_version_check: "0.50.0 (f97d275)"
+tool_bin_path: "fzf"
+tool_bin_name: "fzf"
+tool_download_url: "https://github.com/junegunn/fzf/releases/download/{{ fzf_version }}/fzf-{{ fzf_version }}-linux_amd64.tar.gz"
+tool_skip_clean: no

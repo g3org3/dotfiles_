@@ -1,0 +1,32 @@
+---
+- name: "Check if {{ tool_bin_name }}@{{ tool_version }}?"
+  command: "/usr/local/bin/{{ tool_bin_name }} --version"
+  register: tool_local_version
+  failed_when: false
+  changed_when: false
+
+- name: create /tmp
+  ansible.builtin.file:
+    path: /tmp
+    state: directory
+    mode: 0755
+
+- name: "Download & Extract {{ tool_bin_name }}@{{ tool_version }}"
+  ansible.builtin.unarchive:
+    src: "{{ tool_download_url }}"
+    dest: "/tmp"
+    remote_src: yes
+  when: tool_local_version.stdout != tool_version_check
+
+- name: "Move {{ tool_bin_name }} to /usr/local/bin/"
+  ansible.builtin.copy:
+    src: "/tmp/{{ tool_bin_path }}"
+    dest: "/usr/local/bin/"
+    mode: 0755
+    remote_src: yes
+  when: tool_local_version.stdout != tool_version_check
+# - name: Clean tmp
+#   ansible.builtin.file:
+#     path: "/tmp/"
+#     state: absent
+#   when: tool_local_version.stdout != tool_version_check

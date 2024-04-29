@@ -1,0 +1,12 @@
+---
+- name: clone AstroNvim template
+  ansible.builtin.git:
+    repo: "https://github.com/AstroNvim/template.git"
+    dest: "~/.config/nvim"
+    depth: 1
+    force: yes
+
+- name: Remove .git
+  file:
+    path: "~/.config/nvim/.git"
+    state: absent

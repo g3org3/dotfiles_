@@ -1,0 +1,10 @@
+---
+- name: Upload the basic bashrc
+  ansible.builtin.copy:
+    src: ./bashrc.sh
+    dest: "~/.bashrc"
+
+- name: Upload the tinted fzf
+  ansible.builtin.copy:
+    src: ./tinted-fzf-gruvbox.sh
+    dest: "~/.tinted-fzf-gruvbox.sh"

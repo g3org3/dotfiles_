@@ -1,0 +1,11 @@
+---
+- name: Install basic deps
+  ansible.builtin.apt:
+    pkg:
+      - unzip
+      - vim
+      - curl
+      - wget
+      - git
+      - gcc
+      - zsh

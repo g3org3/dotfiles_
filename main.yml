@@ -1,53 +1,13 @@
 ---
-- name: install all tools
+- name: Configure the server with everything
   hosts: vms
   user: root
   roles:
+    # - basics
+    # - install_tools
+    # - astronvim
+    # - bashrc
     - role: tool
-      tool_version: "0.50.0"
-      tool_version_check: "0.50.0 (f97d275)"
-      tool_bin_path: "fzf"
-      tool_bin_name: "fzf"
-      tool_download_url: "https://github.com/junegunn/fzf/releases/download/{{ fzf_version }}/fzf-{{ fzf_version }}-linux_amd64.tar.gz"
-
-    - role: tool
-      tool_version: "0.10.1"
-      tool_version_check: |-
-        exa - list files on the command-line
-        v0.10.1 [+git]
-        https://the.exa.website/
-      tool_bin_path: "bin/exa"
-      tool_bin_name: "exa"
-      tool_download_url: "https://github.com/ogham/exa/releases/download/v{{ fzf_version }}/exa-linux-x86_64-v{{ fzf_version }}.zip"
-
-    - role: tool
-      tool_version: "0.24.0"
-      tool_version_check: "bat 0.24.0 (fc95468)"
-      tool_bin_path: "bat-v{{ tool_version }}-x86_64-unknown-linux-gnu/bat"
-      tool_bin_name: "bat"
-      tool_download_url: "https://github.com/sharkdp/bat/releases/download/v{{ tool_version }}/bat-v{{ tool_version }}-x86_64-unknown-linux-gnu.tar.gz"
-
-    - role: tool
-      tool_version: "9.0.0"
-      tool_version_check: "fd 9.0.0"
-      tool_bin_path: "fd-v{{ tool_version }}-x86_64-unknown-linux-gnu/fd"
-      tool_bin_name: "fd"
-      tool_download_url: "https://github.com/sharkdp/fd/releases/download/v{{ tool_version }}/fd-v{{ tool_version }}-x86_64-unknown-linux-gnu.tar.gz"
-
-    - role: tool
-      tool_version: "0.9.5"
-      tool_version_check: |-
-        NVIM v{{ tool_version }}
-        Build type: Release
-        LuaJIT 2.1.1692716794
-
-           system vimrc file: "$VIM/sysinit.vim"
-          fall-back for $VIM: "/__w/neovim/neovim/build/nvim.AppDir/usr/share/nvim"
-
-        Run :checkhealth for more info
-      tool_bin_path: "nvim-linux64/bin/nvim"
-      tool_bin_name: "nvim"
-      tool_skip_clean: yes
-      tool_download_url: "https://github.com/neovim/neovim/releases/download/v{{ tool_version }}/nvim-linux64.tar.gz"
-
-    - astronvim
+      tool_bin_name: "lg"
+      tool_version: "0.41.0"
+      tool_download_url: "https://github.com/jesseduffield/lazygit/releases/download/v{{ tool_version }}/lazygit_{{ tool_version }}_Linux_x86_64.tar.gz"

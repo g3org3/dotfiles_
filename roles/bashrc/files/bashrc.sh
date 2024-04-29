@@ -31,7 +31,10 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 . ~/.tinted-fzf-gruvbox.sh
 
 ## GO
-export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:/usr/local/bin/go/bin"
+
+## RUST
+. "$HOME/.cargo/env"
 
 ## NODEJS
 export PATH="$PATH:/root/.local/share/fnm:./node_modules/.bin"

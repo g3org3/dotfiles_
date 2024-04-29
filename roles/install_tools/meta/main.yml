@@ -69,5 +69,25 @@ dependencies:
   - role: tool
     tool_bin_name: "lazygit"
     tool_version: "0.41.0"
-    tool_version_check: "commit=3675570a391b1a49ddd198b4c7e71e17701d4404, build date=2024-03-23T09:09:11Z, build source=binaryRelease, version=0.41.0, os=linux, arch=amd64, git version=2.25.1"
+    tool_version_check: >-
+      commit=3675570a391b1a49ddd198b4c7e71e17701d4404
+      , build date=2024-03-23T09:09:11Z
+      , build source=binaryRelease
+      , version=0.41.0
+      , os=linux
+      , arch=amd64
+      , git version=2.25.1
     tool_download_url: "https://github.com/jesseduffield/lazygit/releases/download/v{{ tool_version }}/lazygit_{{ tool_version }}_Linux_x86_64.tar.gz"
+
+  - role: tool
+    tool_bin_name: "navi"
+    tool_version: "2.23.0"
+    tool_version_check: "navi {{ tool_version }}"
+    tool_download_url: "https://github.com/denisidoro/navi/releases/download/v{{ tool_version }}/navi-v{{ tool_version }}-x86_64-unknown-linux-musl.tar.gz"
+
+  - role: tool
+    tool_bin_name: "go"
+    tool_version_flag: "version"
+    tool_version: "1.22.2"
+    tool_version_check: "go version go{{ tool_version }} linux/amd64"
+    tool_download_url: "https://go.dev/dl/go{{ tool_version }}.linux-amd64.tar.gz"

@@ -10,9 +10,12 @@
 - https://github.com/BurntSushi/ripgrep
 - https://github.com/ajeetdsouza/zoxide
 - https://github.com/denisidoro/navi
-- https://direnv.net
+- https://github.com/direnv/direnv
 - https://github.com/pyenv/pyenv
 - https://github.com/jesseduffield/lazygit
+- https://github.com/gpakosz/.tmux
+- https://github.com/ohmyzsh/ohmyzsh
+- https://github.com/saulpw/visidata
 
 ## Languages
 
@@ -46,4 +49,10 @@ curl -sfL https://direnv.net/install.sh | bash
 ```sh
 # pyenv
 curl https://pyenv.run | bash
+pyenv install 3.10
+```
+
+```sh
+# ansible
+pip3 install ansible-dev-tools
 ```

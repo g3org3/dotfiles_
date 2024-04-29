@@ -3,11 +3,7 @@
   hosts: vms
   user: root
   roles:
-    # - basics
-    # - install_tools
-    # - astronvim
-    # - bashrc
-    - role: tool
-      tool_bin_name: "lg"
-      tool_version: "0.41.0"
-      tool_download_url: "https://github.com/jesseduffield/lazygit/releases/download/v{{ tool_version }}/lazygit_{{ tool_version }}_Linux_x86_64.tar.gz"
+    - basics
+    - install_tools
+    - astronvim
+    - bashrc

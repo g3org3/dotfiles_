@@ -65,3 +65,9 @@ dependencies:
     tool_bin_path: "nvim-linux64/bin/nvim"
     tool_custom_path: "/root"
     tool_download_url: "https://github.com/neovim/neovim/releases/download/v{{ tool_version }}/nvim-linux64.tar.gz"
+
+  - role: tool
+    tool_bin_name: "lazygit"
+    tool_version: "0.41.0"
+    tool_version_check: "commit=3675570a391b1a49ddd198b4c7e71e17701d4404, build date=2024-03-23T09:09:11Z, build source=binaryRelease, version=0.41.0, os=linux, arch=amd64, git version=2.25.1"
+    tool_download_url: "https://github.com/jesseduffield/lazygit/releases/download/v{{ tool_version }}/lazygit_{{ tool_version }}_Linux_x86_64.tar.gz"

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 alias l='clear; pwd; exa --icons --sort modified --group-directories-first -lh --git'
+alias lg='lazygit'
 alias la='l -a'
 alias b='bat --line-range :1000 --color always --theme base16'
 alias back='cd ..; l'
@@ -27,7 +28,7 @@ export FZF_CTRL_R_OPTS="
 export FZF_TMUX_OPTS='-p80%,60%'
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-source "~/.tinted-fzf-gruvbox.sh"
+. ~/.tinted-fzf-gruvbox.sh
 
 ## GO
 export PATH="$PATH:/usr/local/go/bin"

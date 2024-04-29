@@ -1,15 +1,15 @@
 ---
-- name: backup
+- name: Remove local nvim
   ansible.builtin.file:
     path: "~/.config/nvim"
     state: absent
 
-- name: clone AstroNvim template
+- name: Clone AstroNvim template
   ansible.builtin.git:
     repo: "https://github.com/AstroNvim/template.git"
     dest: "~/.config/nvim"
     depth: 1
-    force: yes
+    force: true
 
 - name: Remove .git
   ansible.builtin.file:

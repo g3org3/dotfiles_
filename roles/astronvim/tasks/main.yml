@@ -15,3 +15,28 @@
   ansible.builtin.file:
     path: "~/.config/nvim/.git"
     state: absent
+
+- name: Upload community.lua
+  ansible.builtin.copy:
+    src: ./community.lua
+    dest: ~/.config/nvim/lua/
+
+- name: Upload user.lua
+  ansible.builtin.copy:
+    src: ./user.lua
+    dest: ~/.config/nvim/lua/plugins/
+
+- name: Upload astroui.ua
+  ansible.builtin.copy:
+    src: ./astroui.lua
+    dest: ~/.config/nvim/lua/plugins/
+
+- name: Upload astrolsp.ua
+  ansible.builtin.copy:
+    src: ./astrolsp.lua
+    dest: ~/.config/nvim/lua/plugins/
+
+- name: Upload astrocore.ua
+  ansible.builtin.copy:
+    src: ./astrocore.lua
+    dest: ~/.config/nvim/lua/plugins/

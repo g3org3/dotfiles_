@@ -91,3 +91,9 @@ dependencies:
     tool_version: "1.22.2"
     tool_version_check: "go version go{{ tool_version }} linux/amd64"
     tool_download_url: "https://go.dev/dl/go{{ tool_version }}.linux-amd64.tar.gz"
+
+  - role: tool
+    tool_bin_name: direnv
+    tool_version: "2.34.0"
+    tool_bin_path: "direnv.linux-amd64"
+    tool_download_url: "https://github.com/direnv/direnv/releases/download/v{{ tool_version }}/direnv.linux-amd64"

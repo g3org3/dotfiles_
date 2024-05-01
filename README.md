@@ -21,6 +21,7 @@
 
 ```sh
 # rust
+# https://github.com/fubarhouse/ansible-role-rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
@@ -39,6 +40,7 @@ curl -fsSL https://fnm.vercel.app/install | bash
 #
 fnm install v20
 npm install -g tree-sitter-cli
+npm i -g neovim
 ```
 
 ```sh
@@ -48,6 +50,7 @@ curl -sfL https://direnv.net/install.sh | bash
 
 ```sh
 # pyenv
+# https://github.com/staticdev/ansible-role-pyenv
 curl https://pyenv.run | bash
 pyenv install 3.10
 ```
@@ -55,4 +58,6 @@ pyenv install 3.10
 ```sh
 # ansible
 pip3 install ansible-dev-tools
+pip install neovim
+pip install visidata
 ```

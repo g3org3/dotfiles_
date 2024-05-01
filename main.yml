@@ -5,16 +5,23 @@
   roles:
     - basics
     - install_tools
-    - astronvim
     - bashrc
-    - role: staticdev.pyenv
-      vars:
-        pyenv_version: "v2.3.35"
-        pyenv_virtualenv_version: "v1.2.1"
-        pyenv_update_version: "172a0ed"
-        pyenv_shellrc_file: "{{ ansible_env.HOME }}/.shrc"
-        pyenv_path: "{{ ansible_env.HOME }}/.pyenv"
-        pyenvrc_path: "{{ ansible_env.HOME }}"
-        pyenv_owner: "root"
-        pyenv_global:
-          - 3.11.7
+    # - astronvim
+    # - role: staticdev.pyenv
+    #   vars:
+    #     pyenv_version: "v2.3.35"
+    #     pyenv_virtualenv_version: "v1.2.1"
+    #     pyenv_update_version: "172a0ed"
+    #     pyenv_shellrc_file: "/root/.shrc"
+    #     pyenv_path: "/root/.pyenv"
+    #     pyenvrc_path: "/root"
+    #     pyenv_owner: "root"
+    #     pyenv_python_versions:
+    #       - 3.12.1
+    #     pyenv_shell:
+    #       - 3.12.1
+    #     pyenv_global:
+    #       - 3.12.1
+    - role: fubarhouse.rust
+      rust_version: 1.31.0
+    - cleanup

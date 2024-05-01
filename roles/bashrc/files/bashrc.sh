@@ -1,18 +1,22 @@
 #!/usr/bin/env bash
 
+## Aliases
 alias l='clear; pwd; exa --icons --sort modified --group-directories-first -lh --git'
 alias lg='lazygit'
 alias la='l -a'
 alias b='bat --line-range :1000 --color always --theme base16'
 alias back='cd ..; l'
 
-eval "$(zoxide init bash)"
+export SHNAME=$(echo $SHELL | xargs basename)
+
+## Zoxide
+eval "$(zoxide init $SHNAME)"
 
 ## BAT
 export BAT_THEME="gruvbox-dark"
 
 ## FZF
-eval "$(fzf --bash)"
+eval "$(fzf --$SHNAME)"
 export FZF_CTRL_T_OPTS="
   --walker-skip .git,node_modules,target
   --preview 'bat -n --color=always {}'
@@ -39,4 +43,10 @@ export PATH="$PATH:/usr/local/bin/go/bin"
 ## NODEJS
 export PATH="$PATH:/root/.local/share/fnm:./node_modules/.bin"
 eval "$(fnm env)"
-eval "$(fnm completions --shell bash)"
+eval "$(fnm completions --shell $SHNAME)"
+
+## PYENV
+. ~/.pyenvrc
+
+## DIRENV
+eval "$(direnv hook $SHNAME)"

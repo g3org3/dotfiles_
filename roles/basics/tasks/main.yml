@@ -10,3 +10,9 @@
       - gcc
       - zsh
       - clangd-12
+
+- name: Create /tmp
+  ansible.builtin.file:
+    path: /tmp
+    state: directory
+    mode: "1777"

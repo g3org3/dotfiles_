@@ -8,3 +8,7 @@
   ansible.builtin.copy:
     src: ./tinted-fzf-gruvbox.sh
     dest: "~/.tinted-fzf-gruvbox.sh"
+# - name: Upload tmux conf
+#   ansible.builtin.copy:
+#     src: ./tinted-fzf-gruvbox.sh
+#     dest: "~/.tinted-fzf-gruvbox.sh"

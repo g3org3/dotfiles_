@@ -6,6 +6,7 @@ alias lg='lazygit'
 alias la='l -a'
 alias b='bat --line-range :1000 --color always --theme base16'
 alias back='cd ..; l'
+alias c='nvim $(rg --files | fzf --preview "bat --color always --theme gruvbox-dark --line-range :500 {}")'
 
 export SHNAME=$(echo $SHELL | xargs basename)
 

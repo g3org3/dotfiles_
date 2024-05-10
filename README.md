@@ -23,6 +23,7 @@
 # rust
 # https://github.com/fubarhouse/ansible-role-rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+cargo install bottom
 ```
 
 ```sh

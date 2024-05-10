@@ -97,3 +97,13 @@ dependencies:
     tool_version: "2.34.0"
     tool_bin_path: "direnv.linux-amd64"
     tool_download_url: "https://github.com/direnv/direnv/releases/download/v{{ tool_version }}/direnv.linux-amd64"
+
+  - role: tool
+    tool_bin_name: gdu
+    tool_version: "latest"
+    tool_bin_path: "gdu_linux_amd64"
+    tool_version_check: |-
+      Version:         v5.28.0
+      Built time:      Sun Apr 21 12:04:08 PM CEST 2024
+      Built user:      dundee
+    tool_download_url: "https://github.com/dundee/gdu/releases/latest/download/gdu_linux_amd64.tgz"

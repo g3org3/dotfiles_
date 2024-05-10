@@ -6,7 +6,7 @@
     - basics
     - install_tools
     - bashrc
-    # - astronvim
+    - astronvim
     # - role: staticdev.pyenv
     #   vars:
     #     pyenv_version: "v2.3.35"
@@ -22,6 +22,6 @@
     #       - 3.12.1
     #     pyenv_global:
     #       - 3.12.1
-    - role: fubarhouse.rust
-      rust_version: 1.31.0
+    # - role: fubarhouse.rust
+    #   rust_version: 1.31.0
     - cleanup

@@ -3,6 +3,7 @@
   ansible.builtin.apt:
     pkg:
       - unzip
+      - zip
       - vim
       - curl
       - wget

@@ -51,3 +51,6 @@ eval "$(fnm completions --shell $SHNAME)"
 
 ## DIRENV
 eval "$(direnv hook $SHNAME)"
+
+## JAVA
+. "$HOME/.sdkman/bin/sdkman-init.sh"

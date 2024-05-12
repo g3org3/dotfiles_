@@ -62,3 +62,11 @@ pip3 install ansible-dev-tools
 pip install neovim
 pip install visidata
 ```
+
+```sh
+# java
+curl -s "https://get.sdkman.io" | bash
+sdk install java 11.0.22-tem
+sdk install java 17.0.0-oracle
+sdk install maven
+```

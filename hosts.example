@@ -1,0 +1,9 @@
+[vms]
+malware
+
+[all]
+demo
+etl
+iso-prod
+staging
+ubuntu

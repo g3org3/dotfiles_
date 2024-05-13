@@ -1,11 +1,11 @@
 ---
 - name: Clean tmp
   ansible.builtin.file:
-    path: "/tmp/"
+    path: "/tmp"
     state: absent
 
 - name: Create /tmp
   ansible.builtin.file:
-    path: /tmp
+    path: "/tmp"
     state: directory
     mode: "1777"

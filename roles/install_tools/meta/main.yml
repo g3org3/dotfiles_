@@ -87,6 +87,7 @@ dependencies:
 
   - role: tool
     tool_bin_name: "go"
+    tool_bin_name_: "go/bin/go"
     tool_version_flag: "version"
     tool_version: "1.22.2"
     tool_version_check: "go version go{{ tool_version }} linux/amd64"

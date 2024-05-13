@@ -1,5 +1,5 @@
 ---
-- name: Install basic deps
+- name: "Install basic deps"
   ansible.builtin.apt:
     pkg:
       - unzip
@@ -11,6 +11,29 @@
       - gcc
       - zsh
       - clangd-12
+      - telnet
+      - g++
+      - liblzma-dev
+      - unixodbc-dev
+      - unixodbc
+      - odbcinst1debian2
+      - odbcinst
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+- name: Install basic deps
+  ansible.builtin.yum:
+    pkg:
+      - unzip
+      - vim
+      - curl
+      - wget
+      - git
+      - gcc
+      - zsh
+      - clangd-12
+      - telnet
+      - g++
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux' or ansible_distribution == 'Red Hat'
 
 - name: Create /tmp
   ansible.builtin.file:

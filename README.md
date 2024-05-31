@@ -64,6 +64,13 @@ pip install visidata
 ```
 
 ```sh
+# git
+sudo add-apt-repository ppa:git-core/ppa -y
+sudo apt update
+sudo apt install -y git
+```
+
+```sh
 # java
 curl -s "https://get.sdkman.io" | bash
 sdk install java 11.0.22-tem

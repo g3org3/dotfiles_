@@ -15,6 +15,8 @@
 - https://github.com/jesseduffield/lazygit
 - https://github.com/gpakosz/.tmux
 - https://github.com/ohmyzsh/ohmyzsh
+  - https://github.com/zsh-users/zsh-autosuggestions
+  - https://github.com/zsh-users/zsh-syntax-highlighting
 - https://github.com/saulpw/visidata
 
 ## Languages

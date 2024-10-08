@@ -33,6 +33,9 @@
       - clangd-12
       - telnet
       - g++
+      - bzip2
+      - expect
+      - socat
   when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux' or ansible_distribution == 'Red Hat'
 
 - name: Create /tmp

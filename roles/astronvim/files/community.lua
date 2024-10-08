@@ -9,11 +9,11 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
   -- import/override with your plugins folder
-  { import = "astrocommunity.colorscheme.gruvbox-nvim" },
-  { import = "astrocommunity.pack.gleam" },
+  -- { import = "astrocommunity.colorscheme.gruvbox-nvim" },
+  -- { import = "astrocommunity.pack.gleam" },
   { import = "astrocommunity.pack.bash" },
-  { import = "astrocommunity.pack.astro" },
+  -- { import = "astrocommunity.pack.astro" },
   -- { import = "astrocommunity.pack.ansible" },
-  { import = "astrocommunity.pack.java" },
+  -- { import = "astrocommunity.pack.java" },
   { import = "astrocommunity.pack.typescript" },
 }

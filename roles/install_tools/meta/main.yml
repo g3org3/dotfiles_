@@ -2,87 +2,53 @@
 dependencies:
   - role: tool
     tool_bin_name: "fzf"
-    tool_version: "0.50.0"
-    tool_version_check: "0.50.0 (f97d275)"
-    tool_download_url: "https://github.com/junegunn/fzf/releases/download/{{ tool_version }}/fzf-{{ tool_version }}-linux_amd64.tar.gz"
+    tool_version: "0.55.0"
+    tool_download_url: "https://github.com/junegunn/fzf/releases/download/v{{ tool_version }}/fzf-{{ tool_version }}-linux_amd64.tar.gz"
 
   - role: tool
     tool_bin_name: "exa"
     tool_version: "0.10.1"
-    tool_version_check: |-
-      exa - list files on the command-line
-      v0.10.1 [+git]
-      https://the.exa.website/
     tool_bin_path: "bin/exa"
     tool_download_url: "https://github.com/ogham/exa/releases/download/v{{ tool_version }}/exa-linux-x86_64-v{{ tool_version }}.zip"
 
   - role: tool
     tool_bin_name: "bat"
     tool_version: "0.24.0"
-    tool_version_check: "bat 0.24.0 (fc95468)"
     tool_bin_path: "bat-v{{ tool_version }}-x86_64-unknown-linux-gnu/bat"
     tool_download_url: "https://github.com/sharkdp/bat/releases/download/v{{ tool_version }}/bat-v{{ tool_version }}-x86_64-unknown-linux-gnu.tar.gz"
 
   - role: tool
     tool_bin_name: "fd"
-    tool_version: "9.0.0"
-    tool_version_check: "fd 9.0.0"
+    tool_version: "10.2.0"
     tool_bin_path: "fd-v{{ tool_version }}-x86_64-unknown-linux-gnu/fd"
     tool_download_url: "https://github.com/sharkdp/fd/releases/download/v{{ tool_version }}/fd-v{{ tool_version }}-x86_64-unknown-linux-gnu.tar.gz"
 
   - role: tool
     tool_bin_name: "zoxide"
-    tool_version: "0.9.4"
-    tool_version_check: "zoxide {{ tool_version }}"
+    tool_version: "0.9.6"
     tool_download_url: "https://github.com/ajeetdsouza/zoxide/releases/download/v{{ tool_version }}/zoxide-{{ tool_version }}-x86_64-unknown-linux-musl.tar.gz"
 
   - role: tool
     tool_bin_name: "rg"
-    tool_version: "14.1.0"
+    tool_version: "14.1.1"
     tool_bin_path: "ripgrep-{{ tool_version }}-x86_64-unknown-linux-musl/rg"
-    tool_version_check: |-
-      ripgrep {{ tool_version }} (rev e50df40a19)
-
-      features:-simd-accel,+pcre2
-      simd(compile):+SSE2,-SSSE3,-AVX2
-      simd(runtime):+SSE2,+SSSE3,+AVX2
-
-      PCRE2 10.42 is available (JIT is available)
     tool_download_url: "https://github.com/BurntSushi/ripgrep/releases/download/{{ tool_version }}/ripgrep-{{ tool_version }}-x86_64-unknown-linux-musl.tar.gz"
 
   - role: tool
     tool_bin_name: "nvim"
     tool_version: "0.9.5"
-    tool_version_check: |-
-      NVIM v{{ tool_version }}
-      Build type: Release
-      LuaJIT 2.1.1692716794
-
-         system vimrc file: "$VIM/sysinit.vim"
-        fall-back for $VIM: "/__w/neovim/neovim/build/nvim.AppDir/usr/share/nvim"
-
-      Run :checkhealth for more info
     tool_bin_path: "nvim-linux64/bin/nvim"
     tool_custom_path: "/root"
     tool_download_url: "https://github.com/neovim/neovim/releases/download/v{{ tool_version }}/nvim-linux64.tar.gz"
 
   - role: tool
     tool_bin_name: "lazygit"
-    tool_version: "0.41.0"
-    tool_version_check: >-
-      commit=3675570a391b1a49ddd198b4c7e71e17701d4404
-      , build date=2024-03-23T09:09:11Z
-      , build source=binaryRelease
-      , version=0.41.0
-      , os=linux
-      , arch=amd64
-      , git version=2.25.1
+    tool_version: "0.44.1"
     tool_download_url: "https://github.com/jesseduffield/lazygit/releases/download/v{{ tool_version }}/lazygit_{{ tool_version }}_Linux_x86_64.tar.gz"
 
   - role: tool
     tool_bin_name: "navi"
     tool_version: "2.23.0"
-    tool_version_check: "navi {{ tool_version }}"
     tool_download_url: "https://github.com/denisidoro/navi/releases/download/v{{ tool_version }}/navi-v{{ tool_version }}-x86_64-unknown-linux-musl.tar.gz"
 
   - role: tool
@@ -90,7 +56,6 @@ dependencies:
     tool_bin_name_: "go/bin/go"
     tool_version_flag: "version"
     tool_version: "1.22.2"
-    tool_version_check: "go version go{{ tool_version }} linux/amd64"
     tool_download_url: "https://go.dev/dl/go{{ tool_version }}.linux-amd64.tar.gz"
 
   - role: tool
@@ -101,10 +66,6 @@ dependencies:
 
   - role: tool
     tool_bin_name: gdu
-    tool_version: "latest"
+    tool_version: "5.29.0"
     tool_bin_path: "gdu_linux_amd64"
-    tool_version_check: |-
-      Version:         v5.28.0
-      Built time:      Sun Apr 21 12:04:08 PM CEST 2024
-      Built user:      dundee
-    tool_download_url: "https://github.com/dundee/gdu/releases/latest/download/gdu_linux_amd64.tgz"
+    tool_download_url: "https://github.com/dundee/gdu/releases/download/{{ tool_version }}/gdu_linux_amd64.tgz"

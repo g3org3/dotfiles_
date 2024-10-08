@@ -1,8 +1,7 @@
 ---
-tool_version: "0.50.0"
+tool_version: "0.0.1"
 tool_bin_name: "example"
 tool_bin_name_: "{{ tool_bin_name }}"
-tool_version_check: "{{ tool_version }}"
 tool_bin_path: "{{ tool_bin_name }}"
 tool_download_url: "http://localhost"
 tool_version_flag: "--version"

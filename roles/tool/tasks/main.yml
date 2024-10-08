@@ -1,51 +1,50 @@
 ---
-- name: "Check installed version {{ tool_bin_name }}@{{ tool_version }}?"
+- name: "Check version installed for {{ tool_bin_name }} to be {{ tool_version }}"
   command: "/usr/local/bin/{{ tool_bin_name_ }} {{ tool_version_flag }}"
   register: tool_local_version
   failed_when: false
   changed_when: false
 
-- name: "Download {{ tool_bin_name }}@{{ tool_version }}"
-  ansible.builtin.get_url:
-    url: "{{ tool_download_url }}"
-    dest: "{{ tool_custom_path }}"
-  when:
-    - tool_local_version.stdout != tool_version_check
-    - tool_bin_name == "direnv"
+- name: "Download And Install"
+  when: tool_version not in tool_local_version.stdout
+  block:
+    - name: "Download {{ tool_bin_name }}@{{ tool_version }}"
+      ansible.builtin.get_url:
+        url: "{{ tool_download_url }}"
+        dest: "{{ tool_custom_path }}"
+      when:
+        - tool_bin_name == "direnv"
 
-- name: "Download & Extract {{ tool_bin_name }}@{{ tool_version }}"
-  ansible.builtin.unarchive:
-    src: "{{ tool_download_url }}"
-    dest: "{{ tool_custom_path }}"
-    remote_src: true
-  when:
-    - tool_local_version.stdout != tool_version_check
-    - tool_bin_name != "direnv"
+    - name: "Download & Extract {{ tool_bin_name }}@{{ tool_version }}"
+      ansible.builtin.unarchive:
+        src: "{{ tool_download_url }}"
+        dest: "{{ tool_custom_path }}"
+        remote_src: true
+      when:
+        - tool_bin_name != "direnv"
 
-- name: "Move {{ tool_bin_name }} to /usr/local/bin/"
-  ansible.builtin.copy:
-    src: "{{ tool_custom_path }}/{{ tool_bin_path }}"
-    dest: "/usr/local/bin/{{ tool_bin_name }}"
-    mode: "0755"
-    remote_src: true
-  when:
-    - tool_local_version.stdout != tool_version_check
-    - tool_bin_name != "nvim"
-    - tool_bin_name != "go"
+    - name: "Move {{ tool_bin_name }} to /usr/local/bin/"
+      ansible.builtin.copy:
+        src: "{{ tool_custom_path }}/{{ tool_bin_path }}"
+        dest: "/usr/local/bin/{{ tool_bin_name }}"
+        mode: "0755"
+        remote_src: true
+      when:
+        - tool_bin_name != "nvim"
+        - tool_bin_name != "go"
 
-- name: "Move {{ tool_bin_name }} to /usr/local/bin/"
-  ansible.builtin.copy:
-    src: "{{ tool_custom_path }}/{{ tool_bin_path }}"
-    dest: "/usr/local/bin"
-    mode: "0755"
-    remote_src: true
-  when:
-    - tool_local_version.stdout != tool_version_check
-    - tool_bin_name == "go"
+    - name: "Move {{ tool_bin_name }} to /usr/local/bin/"
+      ansible.builtin.copy:
+        src: "{{ tool_custom_path }}/{{ tool_bin_path }}"
+        dest: "/usr/local/bin"
+        mode: "0755"
+        remote_src: true
+      when:
+        - tool_bin_name == "go"
 
-- name: Symlink temp fix for nvim
-  ansible.builtin.file:
-    src: "{{ tool_custom_path }}/{{ tool_bin_path }}"
-    dest: "/usr/local/bin/{{ tool_bin_name }}"
-    state: link
-  when: tool_bin_name == "nvim"
+    - name: Symlink temp fix for nvim
+      ansible.builtin.file:
+        src: "{{ tool_custom_path }}/{{ tool_bin_path }}"
+        dest: "/usr/local/bin/{{ tool_bin_name }}"
+        state: link
+      when: tool_bin_name == "nvim"
